@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap');
+@import './styles/neubrutalism.css';
+@import './styles/animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: theme('colors.cream');
+  color: theme('colors.black');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Neubrutalist Slider */
+.neobrutalist-range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  height: 2.5rem;
+  /* Taller touch target */
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+.neobrutalist-range:focus {
+  outline: none;
+}
+
+/* Track Styling */
+.neobrutalist-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.5rem;
+  background: #FFF9E6;
+  /* cream */
+  border: 4px solid #000;
+  border-radius: 0;
+  /* Sharp corners */
+  box-shadow: none;
+}
+
+.neobrutalist-range::-moz-range-track {
+  width: 100%;
+  height: 1.5rem;
+  background: #FFF9E6;
+  border: 4px solid #000;
+  border-radius: 0;
+}
+
+/* Thumb Styling */
+.neobrutalist-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  background: #FFE500;
+  /* electric-yellow */
+  border: 4px solid #000;
+  border-radius: 0;
+  /* Square thumb */
+  margin-top: -0.5rem;
+  /* Center thumb on track ( (2rem - 1.5rem / 2) * -1 - border adjustments? roughly -0.5rem works for height diff) */
+  box-shadow: 4px 4px 0px #E91E63;
+  /* bright-magenta shadow offset */
+  transition: transform 0.1s;
+}
+
+.neobrutalist-range::-webkit-slider-thumb:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #E91E63;
+}
+
+.neobrutalist-range::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  background: #FFE500;
+  border: 4px solid #000;
+  border-radius: 0;
+  box-shadow: 4px 4px 0px #E91E63;
+  transition: transform 0.1s;
+}
+
+.neobrutalist-range::-moz-range-thumb:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #E91E63;
+}
